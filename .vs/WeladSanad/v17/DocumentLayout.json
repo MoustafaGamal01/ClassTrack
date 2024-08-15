@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\AIA\\Desktop\\WeladSanad\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|c:\\users\\aia\\desktop\\weladsanad\\weladsanad\\repositories\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|solutionrelative:weladsanad\\repositories\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|c:\\users\\aia\\desktop\\weladsanad\\weladsanad\\migrations\\20240815141752_addingidentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|solutionrelative:weladsanad\\migrations\\20240815141752_addingidentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|c:\\users\\aia\\desktop\\weladsanad\\weladsanad\\models\\mycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|solutionrelative:weladsanad\\models\\mycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|c:\\users\\aia\\desktop\\weladsanad\\weladsanad\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|solutionrelative:weladsanad\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "IStudentRepository.cs",
-              "DocumentMoniker": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\Repositories\\IStudentRepository.cs",
-              "RelativeDocumentMoniker": "WeladSanad\\Repositories\\IStudentRepository.cs",
-              "ToolTip": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\Repositories\\IStudentRepository.cs",
-              "RelativeToolTip": "WeladSanad\\Repositories\\IStudentRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Title": "20240815141752_AddingIdentity.cs",
+              "DocumentMoniker": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\Migrations\\20240815141752_AddingIdentity.cs",
+              "RelativeDocumentMoniker": "WeladSanad\\Migrations\\20240815141752_AddingIdentity.cs",
+              "ToolTip": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\Migrations\\20240815141752_AddingIdentity.cs",
+              "RelativeToolTip": "WeladSanad\\Migrations\\20240815141752_AddingIdentity.cs",
+              "ViewState": "AQIAAJcAAAAAAAAAAAAMwJoAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T19:16:10.697Z",
+              "WhenOpened": "2024-08-15T14:17:53.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MyContext.cs",
+              "DocumentMoniker": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\Models\\MyContext.cs",
+              "RelativeDocumentMoniker": "WeladSanad\\Models\\MyContext.cs",
+              "ToolTip": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\Models\\MyContext.cs",
+              "RelativeToolTip": "WeladSanad\\Models\\MyContext.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T14:11:13.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "WeladSanad\\Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "WeladSanad\\Models\\ApplicationUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T14:08:44.113Z",
               "EditorCaption": ""
             }
           ]

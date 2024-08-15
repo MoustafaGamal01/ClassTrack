@@ -135,3 +135,10 @@ C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Debug\net8.0\refint\WeladSanad.dl
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Debug\net8.0\WeladSanad.pdb
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Debug\net8.0\WeladSanad.genruntimeconfig.cache
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Debug\net8.0\ref\WeladSanad.dll
+C:\Users\AIA\Desktop\WeladSanad\WeladSanad\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\AIA\Desktop\WeladSanad\WeladSanad\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\AIA\Desktop\WeladSanad\WeladSanad\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\AIA\Desktop\WeladSanad\WeladSanad\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\AIA\Desktop\WeladSanad\WeladSanad\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\AIA\Desktop\WeladSanad\WeladSanad\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Debug\net8.0\WeladSanad.sourcelink.json

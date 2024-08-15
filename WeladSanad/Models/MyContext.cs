@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace WeladSanad.Models
 {
-    public class MyContext : DbContext
+    public class MyContext : IdentityDbContext<ApplicationUser>
     {
         public MyContext(DbContextOptions<MyContext> options) : base(options)
         {
@@ -12,6 +13,7 @@ namespace WeladSanad.Models
         public DbSet<Group> Groups { get; set; }
         public DbSet<Attend> Attends { get; set; }
         public DbSet<StudentAttend> StudentAttends { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }    
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,6 +33,10 @@ namespace WeladSanad.Models
 
             modelBuilder.Entity<StudentAttend>()
                 .Property(sa => sa.Description)
+                .IsUnicode(true);
+
+            modelBuilder.Entity<ApplicationUser>()
+                .Property(a=>a.Name)
                 .IsUnicode(true);
         }
     }
