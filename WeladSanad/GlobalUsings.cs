@@ -8,4 +8,9 @@ global using WeladSanad.Repositories.IRepository;
 global using Microsoft.EntityFrameworkCore;
 global using System.ComponentModel.DataAnnotations.Schema;
 global using Microsoft.AspNetCore.Identity;
- 
+global using System.ComponentModel.DataAnnotations;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Http;
+global using WeladSanad.Controllers;
+global using WeladSanad.Dtos.Student;
+global using WeladSanad.Dtos.Group;

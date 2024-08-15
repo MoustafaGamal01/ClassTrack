@@ -1,0 +1,239 @@
+[
+  {
+    "ContainingType": "WeladSanad.Controllers.AttendenceController",
+    "Method": "AddAttendence",
+    "RelativePath": "api/Attendence/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "attendence",
+        "Type": "WeladSanad.Models.StudentAttend",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.Controllers.AttendenceTypeController",
+    "Method": "AddAttendenceType",
+    "RelativePath": "api/AttendenceType/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "attendenceType",
+        "Type": "WeladSanad.Models.Attend",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.Controllers.AttendenceTypeController",
+    "Method": "DeleteAttendenceType",
+    "RelativePath": "api/AttendenceType/delete/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.Controllers.AttendenceTypeController",
+    "Method": "GetAttendenceTypes",
+    "RelativePath": "api/AttendenceType/getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.Controllers.AttendenceTypeController",
+    "Method": "GetAttendenceType",
+    "RelativePath": "api/AttendenceType/gettype/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.Controllers.AttendenceTypeController",
+    "Method": "UpdateAttendenceType",
+    "RelativePath": "api/AttendenceType/update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "attendenceType",
+        "Type": "WeladSanad.Models.Attend",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.Controllers.GroupController",
+    "Method": "AddGroup",
+    "RelativePath": "api/Group/addgroup",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "group",
+        "Type": "WeladSanad.Dtos.Group.AddGroupDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.Controllers.GroupController",
+    "Method": "DeleteGroup",
+    "RelativePath": "api/Group/deletegroup/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.Controllers.GroupController",
+    "Method": "UpdateGroup",
+    "RelativePath": "api/Group/updategroup/{grpId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "grpId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "group",
+        "Type": "WeladSanad.Dtos.Group.UpdateGroupDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.Controllers.GroupController",
+    "Method": "ViewGroups",
+    "RelativePath": "api/Group/viewgroups",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.Controllers.StudentController",
+    "Method": "AddStudent",
+    "RelativePath": "api/Student/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "GroupId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.Controllers.StudentController",
+    "Method": "DeleteStudent",
+    "RelativePath": "api/Student/delete/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.Controllers.StudentController",
+    "Method": "StudentsInGroup",
+    "RelativePath": "api/Student/studentsingroup/{groupId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "groupId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.Controllers.StudentController",
+    "Method": "UpdateStudent",
+    "RelativePath": "api/Student/update/{stdId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "stdId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "studentDto",
+        "Type": "WeladSanad.Dtos.Student.UpdateStudentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.Controllers.StudentController",
+    "Method": "ViewStudents",
+    "RelativePath": "api/Student/viewstudents",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

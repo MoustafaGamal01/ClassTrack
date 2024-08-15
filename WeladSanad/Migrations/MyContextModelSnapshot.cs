@@ -245,7 +245,7 @@ namespace WeladSanad.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Attends");
+                    b.ToTable("Attends", (string)null);
                 });
 
             modelBuilder.Entity("WeladSanad.Models.Group", b =>
@@ -263,7 +263,7 @@ namespace WeladSanad.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Groups");
+                    b.ToTable("Groups", (string)null);
                 });
 
             modelBuilder.Entity("WeladSanad.Models.Student", b =>
@@ -286,7 +286,7 @@ namespace WeladSanad.Migrations
 
                     b.HasIndex("GroupId");
 
-                    b.ToTable("Students");
+                    b.ToTable("Students", (string)null);
                 });
 
             modelBuilder.Entity("WeladSanad.Models.StudentAttend", b =>
@@ -317,7 +317,7 @@ namespace WeladSanad.Migrations
 
                     b.HasIndex("StudentId");
 
-                    b.ToTable("StudentAttends");
+                    b.ToTable("StudentAttends", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -9,6 +9,7 @@ namespace WeladSanad.Repositories.IRepository
         Task AddStudent(Student student);
         Task UpdateStudent(int StudentId, Student student);
         Task DeleteStudent(int id);
+        Task<List<Student>> GetStudentsByGroupId(int groupId);
         Task<bool?> SaveChanges();
     }
 }

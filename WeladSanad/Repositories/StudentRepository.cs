@@ -8,7 +8,6 @@ namespace WeladSanad.Repositories
     {
         private readonly MyContext _context;
 
-        // implement this interface
         public StudentRepository(MyContext context)
         {
             _context = context;
@@ -31,12 +30,17 @@ namespace WeladSanad.Repositories
 
         public async Task<Student> GetStudentById(int id)
         {
-            return await _context.Students.FirstOrDefaultAsync(s => s.Id == id);
+            return await _context.Students.Include(s=>s.Group).FirstOrDefaultAsync(s => s.Id == id);
         }
 
         public async Task<List<Student>> GetStudents()
         {
            return await _context.Students.ToListAsync();
+        }
+
+        public Task<List<Student>> GetStudentsByGroupId(int groupId)
+        {
+            return _context.Students.Include(g=>g.Group).Where(s => s.GroupId == groupId).ToListAsync();    
         }
 
         public async Task<bool?> SaveChanges()
