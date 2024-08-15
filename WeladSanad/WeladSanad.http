@@ -1,0 +1,6 @@
+@WeladSanad_HostAddress = http://localhost:5034
+
+GET {{WeladSanad_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
