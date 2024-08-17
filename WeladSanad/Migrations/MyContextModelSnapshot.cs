@@ -174,9 +174,6 @@ namespace WeladSanad.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<int>("GroupId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -217,8 +214,6 @@ namespace WeladSanad.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GroupId");
-
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -245,7 +240,7 @@ namespace WeladSanad.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Attends", (string)null);
+                    b.ToTable("Attends");
                 });
 
             modelBuilder.Entity("WeladSanad.Models.Group", b =>
@@ -261,9 +256,14 @@ namespace WeladSanad.Migrations
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TeacherId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Groups", (string)null);
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("Groups");
                 });
 
             modelBuilder.Entity("WeladSanad.Models.Student", b =>
@@ -274,8 +274,11 @@ namespace WeladSanad.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("GroupId")
+                    b.Property<int>("GroupId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -286,7 +289,7 @@ namespace WeladSanad.Migrations
 
                     b.HasIndex("GroupId");
 
-                    b.ToTable("Students", (string)null);
+                    b.ToTable("Students");
                 });
 
             modelBuilder.Entity("WeladSanad.Models.StudentAttend", b =>
@@ -304,7 +307,6 @@ namespace WeladSanad.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(max)");
 
@@ -317,7 +319,7 @@ namespace WeladSanad.Migrations
 
                     b.HasIndex("StudentId");
 
-                    b.ToTable("StudentAttends", (string)null);
+                    b.ToTable("StudentAttends");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -371,22 +373,22 @@ namespace WeladSanad.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("WeladSanad.Models.ApplicationUser", b =>
+            modelBuilder.Entity("WeladSanad.Models.Group", b =>
                 {
-                    b.HasOne("WeladSanad.Models.Group", "Group")
+                    b.HasOne("WeladSanad.Models.ApplicationUser", "Teacher")
                         .WithMany()
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TeacherId");
 
-                    b.Navigation("Group");
+                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("WeladSanad.Models.Student", b =>
                 {
                     b.HasOne("WeladSanad.Models.Group", "Group")
                         .WithMany()
-                        .HasForeignKey("GroupId");
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Group");
                 });

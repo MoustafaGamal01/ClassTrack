@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WeladSanad")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b81aca0bcfed5ced13250c086561d8fbb0de240")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd9ab32a2172f198ccc1381896f282c14cf9101f")]
 [assembly: System.Reflection.AssemblyProductAttribute("WeladSanad")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WeladSanad")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

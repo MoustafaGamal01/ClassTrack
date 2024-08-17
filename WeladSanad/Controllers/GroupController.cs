@@ -15,7 +15,8 @@ namespace WeladSanad.Controllers
         }
 
         [HttpPost]
-        [Route("addgroup")]
+        [Route("Add")]
+        [Authorize("Admin")]
         public async Task<IActionResult> AddGroup([FromBody] AddGroupDto group)
         {
             if (!ModelState.IsValid)
@@ -33,7 +34,8 @@ namespace WeladSanad.Controllers
         }
 
         [HttpGet]
-        [Route("viewgroups")]
+        [Route("GetAll")]
+        [Authorize]
         public async Task<IActionResult> ViewGroups()
         {
             List<ViewGroupsDto> grpsDto = new List<ViewGroupsDto>();
@@ -47,8 +49,9 @@ namespace WeladSanad.Controllers
             return Ok(grpsDto);
         }
 
-        [HttpPost]
-        [Route("deletegroup/{id:int}")]
+        [HttpDelete]
+        [Route("Delete/{id:int}")]
+        [Authorize("Admin")]
         public async Task<IActionResult> DeleteGroup(int id)
         {
             var grp = await _groupRepository.GetGroupById(id);
@@ -62,23 +65,24 @@ namespace WeladSanad.Controllers
             return Ok();
         }
 
-        [HttpPost]
-        [Route("updategroup/{grpId:int}")]
-        public async Task<IActionResult> UpdateGroup(int grpId, [FromBody] UpdateGroupDto group)
+        [HttpPut]
+        [Route("Update/{id:int}")]
+        [Authorize("Admin")]
+        public async Task<IActionResult> UpdateGroup(int id, [FromBody] UpdateGroupDto group)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var grp = await _groupRepository.GetGroupById(grpId);
+            var grp = await _groupRepository.GetGroupById(id);
             if (grp == null)
             {
                 return NotFound();
             }
 
             if(grp.Name != null) grp.Name = group.Name;
-            await _groupRepository.UpdateGroup(grpId,grp);
+            await _groupRepository.UpdateGroup(id, grp);
             await _groupRepository.SaveChanges();
             return Ok();
         }

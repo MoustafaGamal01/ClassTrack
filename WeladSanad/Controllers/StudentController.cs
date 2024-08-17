@@ -18,7 +18,8 @@ namespace WeladSanad.Controllers
         }
 
         [HttpPost]
-        [Route("add")]
+        [Route("Add")]
+        [Authorize]
         public async Task<IActionResult> AddStudent([FromForm] AddStudentDto student)
         {
             if (!ModelState.IsValid)
@@ -37,7 +38,8 @@ namespace WeladSanad.Controllers
         }
 
         [HttpGet]
-        [Route("viewstudents")]
+        [Route("GetAll")]
+        [Authorize]
         public async Task<IActionResult> ViewStudents()
         {
             List<ViewStudentsDto> stdsDto = new List<ViewStudentsDto>();
@@ -57,26 +59,47 @@ namespace WeladSanad.Controllers
         }
 
         [HttpPost]
-        [Route("delete/{id:int}")]
-        public async Task<IActionResult> DeleteStudent(int id)
+        [Route("Deactivate/{id:int}")]
+        [Authorize("Admin")]
+        public async Task<IActionResult> DeactivateStudent(int id)
         {
             var std = await _studentRepository.GetStudentById(id);
             if (std == null)
             {
                 return NotFound();
             }
-            await _studentRepository.DeleteStudent(id);
+            //await _studentRepository.DeleteStudent(id);
+            std.IsDeleted = true;
             await _studentRepository.SaveChanges();
             return Ok();
         }
 
         [HttpPost]
-        [Route("update/{stdId:int}")]
-        public async Task<IActionResult> UpdateStudent(int stdId, [FromBody] UpdateStudentDto studentDto)
+        [Route("Activate/{id:int}")]
+        [Authorize("Admin")]
+        public async Task<IActionResult> ActivateStudent(int id)
         {
+            var std = await _studentRepository.GetStudentById(id);
+            if (std == null)
+            {
+                return NotFound();
+            }
+            //await _studentRepository.DeleteStudent(id);
+            std.IsDeleted = false;
+            await _studentRepository.SaveChanges();
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("Update/{id:int}")]
+        [Authorize("Admin")]
+        public async Task<IActionResult> UpdateStudent(int id, [FromBody] UpdateStudentDto studentDto)
+        {
+            
+
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return BadRequest("Invalid Data");
             }
 
             // Check if both Name and GroupId are null
@@ -85,7 +108,7 @@ namespace WeladSanad.Controllers
                 return BadRequest("Either Name or GroupId must be provided.");
             }
 
-            var std = await _studentRepository.GetStudentById(stdId);
+            var std = await _studentRepository.GetStudentById(id);
 
             if (std == null)
             {
@@ -96,16 +119,52 @@ namespace WeladSanad.Controllers
             if (studentDto.Name != null) std.Name = studentDto.Name;
             if (studentDto.GroupId != null) std.GroupId = studentDto.GroupId;
 
-            await _studentRepository.UpdateStudent(stdId, std);
+            await _studentRepository.UpdateStudent(id, std);
             await _studentRepository.SaveChanges();
             return Ok();
         }
 
         [HttpGet]
-        [Route("studentsingroup/{groupId:int}")]
+        [Route("StudentsInGroup/{groupId:int}")]
+        [Authorize]
         public async Task<IActionResult> StudentsInGroup(int groupId)
         {
             var stds = await _studentRepository.GetStudentsByGroupId(groupId);
+
+            var stdinGroup = stds.Select(s => new ViewStudentsDto
+            {
+                Id = s.Id,
+                Name = s.Name,
+                GroupName = s.Group.Name
+            });
+
+            return Ok(stdinGroup);
+        }
+
+        [HttpGet]
+        [Route("DeactivatedStudents")]
+        [Authorize("Admin")]
+        public async Task<IActionResult> DeactivatedStudents()
+        {
+            var delStudents = await _studentRepository.GetDeletedStudents();
+
+            var stdsDto = delStudents.Select(s => new ViewStudentsDto
+            {
+                Id=s.Id,
+                Name=s.Name,
+                GroupName = s.Group.Name
+            });
+
+            return Ok(stdsDto);
+        }
+
+        [HttpGet]
+        [Route("Search/{name:alpha}")]
+        [Authorize]
+        public async Task<IActionResult> Search(string name)
+        {
+            var stds = await _studentRepository.Search(name);
+
             return Ok(stds);
         }
     }
