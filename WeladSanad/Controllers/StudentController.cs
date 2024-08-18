@@ -39,7 +39,7 @@ namespace WeladSanad.Controllers
 
         [HttpGet]
         [Route("GetAll")]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> ViewStudents()
         {
             List<ViewStudentsDto> stdsDto = new List<ViewStudentsDto>();
@@ -159,7 +159,7 @@ namespace WeladSanad.Controllers
         }
 
         [HttpGet]
-        [Route("Search/{name:alpha}")]
+        [Route("Search/{name}")]
         [Authorize]
         public async Task<IActionResult> Search(string name)
         {

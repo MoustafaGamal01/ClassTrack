@@ -142,3 +142,5 @@ C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\refint\WeladSanad.
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\WeladSanad.pdb
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\WeladSanad.genruntimeconfig.cache
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\ref\WeladSanad.dll
+C:\Users\AIA\Desktop\WeladSanad\WeladSanad\bin\Release\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\AIA\Desktop\WeladSanad\WeladSanad\bin\Release\net8.0\Newtonsoft.Json.dll

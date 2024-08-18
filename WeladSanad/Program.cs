@@ -4,12 +4,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System;
+using System.IO;
+using System.Net;
 using System.Text;
-using WeladSanad.Models;
-using Microsoft.AspNetCore.Identity;
+
 
 namespace WeladSanad
 {
@@ -40,51 +41,26 @@ namespace WeladSanad
                 });
 
             services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
 
-                var securityScheme = new OpenApiSecurityScheme
-                {
-                    Name = "Authorization",
-                    Description = "JWT Authorization header using the Bearer scheme.",
-                    In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.Http,
-                    Scheme = "bearer",
-                    BearerFormat = "JWT"
-                };
-                c.AddSecurityDefinition("Bearer", securityScheme);
-
-                var securityRequirement = new OpenApiSecurityRequirement
-                {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = "Bearer"
-                            }
-                        },
-                        Array.Empty<string>()
-                    }
-                };
-                c.AddSecurityRequirement(securityRequirement);
-            });
+            // Add Repositories
 
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IGroupRepository, GroupRepository>();
             services.AddScoped<IAttendExcuseRepository, AttendExcuseRepository>();
             services.AddScoped<IAttendenceRepository, AttendenceRepository>();
 
-            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
-                options.Password.RequireDigit = true)
+            // Configure Database Context
+            services.AddDbContext<MyContext>(options =>
+            {
+                options.UseSqlServer(configuration.GetConnectionString("RemoteCS"));
+            });
+
+            // Configure Identity
+            services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<MyContext>()
                 .AddDefaultTokenProviders();
 
-            services.Configure<DataProtectionTokenProviderOptions>(options =>
-                options.TokenLifespan = TimeSpan.FromHours(2));
-
+            // Configure JWT Authentication
             var jwtSettings = configuration.GetSection("Jwt").Get<JwtOptions>();
             services.AddSingleton(jwtSettings);
             services.AddAuthentication(options =>
@@ -105,30 +81,9 @@ namespace WeladSanad
                     ValidAudience = jwtSettings.Audience,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Key))
                 };
-
-                options.Events = new JwtBearerEvents
-                {
-                    OnAuthenticationFailed = context =>
-                    {
-                        if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
-                        {
-                            context.Response.Headers.Add("Token-Expired", "true");
-                        }
-                        return Task.CompletedTask;
-                    },
-                    OnChallenge = context =>
-                    {
-                        context.HandleResponse();
-                        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                        context.Response.ContentType = "application/json";
-                        return context.Response.WriteAsync(new
-                        {
-                            error = "You are not authorized"
-                        }.ToString());
-                    }
-                };
             });
 
+            // Configure CORS
             services.AddCors(corsOptions =>
             {
                 corsOptions.AddPolicy("MyPolicy", corsPolicyBuilder =>
@@ -137,9 +92,39 @@ namespace WeladSanad
                 });
             });
 
-            services.AddDbContext<MyContext>(options =>
+            // Configure Swagger with OAuth2 (JWT Bearer)
+            services.AddSwaggerGen(c =>
             {
-                options.UseSqlServer(configuration.GetConnectionString("RemoteCS"));
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WeladSanad API", Version = "v1" });
+
+                // Define the JWT Bearer security scheme
+                var securityScheme = new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Description = "JWT Authorization header using the Bearer scheme.",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "bearer",
+                    BearerFormat = "JWT"
+                };
+                c.AddSecurityDefinition("Bearer", securityScheme);
+
+                // Add JWT Bearer requirement to all endpoints
+                var securityRequirement = new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        Array.Empty<string>()
+                    }
+                };
+                c.AddSecurityRequirement(securityRequirement);
             });
         }
 
@@ -150,9 +135,22 @@ namespace WeladSanad
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API v1");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "WeladSanad API v1");
+
+                    // Enable JWT authorization in Swagger UI
+                    c.OAuthClientId("swagger-client-id");
+                    c.OAuthClientSecret(""); // Normally you would set this securely
+                    c.OAuthAppName("Swagger UI");
                 });
             }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
+            }
+
+            // Global Exception Handling Middleware
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
 
             app.UseHttpsRedirection();
             app.UseCors("MyPolicy");
@@ -161,4 +159,44 @@ namespace WeladSanad
             app.MapControllers();
         }
     }
+
+    // Custom Middleware for handling exceptions
+    public class ExceptionHandlingMiddleware
+    {
+        private readonly RequestDelegate _next;
+        private readonly ILogger<ExceptionHandlingMiddleware> _logger;
+
+        public ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger)
+        {
+            _next = next;
+            _logger = logger;
+        }
+
+        public async Task InvokeAsync(HttpContext httpContext)
+        {
+            try
+            {
+                await _next(httpContext);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unhandled exception has occurred while executing the request.");
+                await HandleExceptionAsync(httpContext, ex);
+            }
+        }
+
+        private static Task HandleExceptionAsync(HttpContext context, Exception exception)
+        {
+            context.Response.ContentType = "application/json";
+            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+
+            return context.Response.WriteAsync(new
+            {
+                StatusCode = context.Response.StatusCode,
+                Message = "Internal Server Error from the custom middleware.",
+                Details = exception.Message
+            }.ToString());
+        }
+    }
 }
+

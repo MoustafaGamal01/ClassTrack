@@ -6,6 +6,7 @@ C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out\WeladSanad.pdb
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out\Azure.Core.dll
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out\Azure.Identity.dll
+C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -29,6 +30,7 @@ C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.OpenApi.dll
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.SqlServer.Server.dll
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
+C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out\Newtonsoft.Json.dll
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\AIA\Desktop\WeladSanad\WeladSanad\obj\Release\net8.0\win-x86\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
