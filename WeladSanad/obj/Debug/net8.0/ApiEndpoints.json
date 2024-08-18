@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "WeladSanad.Controllers.AttendenceController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.Attendence.AttendenceController",
     "Method": "AddAttendence",
     "RelativePath": "api/Attendence/Add",
     "HttpMethod": "POST",
@@ -9,14 +9,14 @@
     "Parameters": [
       {
         "Name": "attendence",
-        "Type": "WeladSanad.Dtos.StudentAttendDto",
+        "Type": "WeladSanad.BusinessLogicLayer.Dtos.Attendence.StudentAttendDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.AttendenceController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.Attendence.AttendenceController",
     "Method": "Search",
     "RelativePath": "api/Attendence/Search/{searchMonthYear}",
     "HttpMethod": "GET",
@@ -32,7 +32,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.AttendenceController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.Attendence.AttendenceController",
     "Method": "UpdateAttendence",
     "RelativePath": "api/Attendence/Update/{id}",
     "HttpMethod": "PUT",
@@ -46,14 +46,14 @@
       },
       {
         "Name": "attendence",
-        "Type": "WeladSanad.Models.StudentAttend",
+        "Type": "WeladSanad.DataAccessLayer.Models.Attendence.StudentAttend",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.AttendenceExcuseController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.Attendence.AttendenceExcuseController",
     "Method": "AddAttendenceType",
     "RelativePath": "api/AttendenceExcuse/Add",
     "HttpMethod": "POST",
@@ -62,14 +62,14 @@
     "Parameters": [
       {
         "Name": "attendenceType",
-        "Type": "WeladSanad.Dtos.AttendTypeDto",
+        "Type": "WeladSanad.BusinessLogicLayer.Dtos.Attendence.AttendTypeDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.AttendenceExcuseController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.Attendence.AttendenceExcuseController",
     "Method": "DeleteAttendenceType",
     "RelativePath": "api/AttendenceExcuse/Delete/{id}",
     "HttpMethod": "DELETE",
@@ -85,7 +85,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.AttendenceExcuseController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.Attendence.AttendenceExcuseController",
     "Method": "GetAttendenceTypes",
     "RelativePath": "api/AttendenceExcuse/GetAll",
     "HttpMethod": "GET",
@@ -95,7 +95,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.AttendenceExcuseController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.Attendence.AttendenceExcuseController",
     "Method": "GetAttendenceType",
     "RelativePath": "api/AttendenceExcuse/GetType/{id}",
     "HttpMethod": "GET",
@@ -111,7 +111,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.AttendenceExcuseController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.Attendence.AttendenceExcuseController",
     "Method": "UpdateAttendenceType",
     "RelativePath": "api/AttendenceExcuse/Update/{id}",
     "HttpMethod": "PUT",
@@ -125,14 +125,14 @@
       },
       {
         "Name": "attendenceType",
-        "Type": "WeladSanad.Dtos.AttendTypeDto",
+        "Type": "WeladSanad.BusinessLogicLayer.Dtos.Attendence.AttendTypeDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.AuthController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
@@ -141,14 +141,14 @@
     "Parameters": [
       {
         "Name": "userLoginDto",
-        "Type": "WeladSanad.Dtos.UserLoginDto",
+        "Type": "WeladSanad.BusinessLogicLayer.Dtos.Auth.UserLoginDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.AuthController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.AuthController",
     "Method": "Logout",
     "RelativePath": "api/Auth/logout",
     "HttpMethod": "GET",
@@ -158,7 +158,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.AuthController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.AuthController",
     "Method": "Register",
     "RelativePath": "api/Auth/register",
     "HttpMethod": "POST",
@@ -167,14 +167,14 @@
     "Parameters": [
       {
         "Name": "userRegisterDto",
-        "Type": "WeladSanad.Dtos.UserRegisterDto",
+        "Type": "WeladSanad.BusinessLogicLayer.Dtos.Auth.UserRegisterDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.GroupController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.GroupController",
     "Method": "AddGroup",
     "RelativePath": "api/Group/Add",
     "HttpMethod": "POST",
@@ -183,14 +183,14 @@
     "Parameters": [
       {
         "Name": "group",
-        "Type": "WeladSanad.Dtos.Group.AddGroupDto",
+        "Type": "WeladSanad.BusinessLogicLayer.Dtos.Group.AddGroupDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.GroupController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.GroupController",
     "Method": "DeleteGroup",
     "RelativePath": "api/Group/Delete/{id}",
     "HttpMethod": "DELETE",
@@ -206,7 +206,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.GroupController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.GroupController",
     "Method": "ViewGroups",
     "RelativePath": "api/Group/GetAll",
     "HttpMethod": "GET",
@@ -216,7 +216,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.GroupController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.GroupController",
     "Method": "UpdateGroup",
     "RelativePath": "api/Group/Update/{id}",
     "HttpMethod": "PUT",
@@ -230,14 +230,14 @@
       },
       {
         "Name": "group",
-        "Type": "WeladSanad.Dtos.Group.UpdateGroupDto",
+        "Type": "WeladSanad.BusinessLogicLayer.Dtos.Group.UpdateGroupDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.RoleController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.RoleController",
     "Method": "CreateRole",
     "RelativePath": "api/Role/Create",
     "HttpMethod": "POST",
@@ -253,7 +253,23 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.RoleController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.RoleController",
+    "Method": "DeleteRole",
+    "RelativePath": "api/Role/Delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.RoleController",
     "Method": "GetAllRoles",
     "RelativePath": "api/Role/GetAll",
     "HttpMethod": "GET",
@@ -263,7 +279,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.StudentController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.StudentController",
     "Method": "ActivateStudent",
     "RelativePath": "api/Student/Activate/{id}",
     "HttpMethod": "POST",
@@ -279,7 +295,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.StudentController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.StudentController",
     "Method": "AddStudent",
     "RelativePath": "api/Student/Add",
     "HttpMethod": "POST",
@@ -300,7 +316,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.StudentController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.StudentController",
     "Method": "DeactivateStudent",
     "RelativePath": "api/Student/Deactivate/{id}",
     "HttpMethod": "POST",
@@ -316,7 +332,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.StudentController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.StudentController",
     "Method": "DeactivatedStudents",
     "RelativePath": "api/Student/DeactivatedStudents",
     "HttpMethod": "GET",
@@ -326,7 +342,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.StudentController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.StudentController",
     "Method": "ViewStudents",
     "RelativePath": "api/Student/GetAll",
     "HttpMethod": "GET",
@@ -336,7 +352,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.StudentController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.StudentController",
     "Method": "Search",
     "RelativePath": "api/Student/Search/{name}",
     "HttpMethod": "GET",
@@ -352,7 +368,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.StudentController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.StudentController",
     "Method": "StudentsInGroup",
     "RelativePath": "api/Student/StudentsInGroup/{groupId}",
     "HttpMethod": "GET",
@@ -368,7 +384,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WeladSanad.Controllers.StudentController",
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.StudentController",
     "Method": "UpdateStudent",
     "RelativePath": "api/Student/Update/{id}",
     "HttpMethod": "PUT",
@@ -382,7 +398,7 @@
       },
       {
         "Name": "studentDto",
-        "Type": "WeladSanad.Dtos.Student.UpdateStudentDto",
+        "Type": "WeladSanad.BusinessLogicLayer.Dtos.Student.UpdateStudentDto",
         "IsRequired": true
       }
     ],

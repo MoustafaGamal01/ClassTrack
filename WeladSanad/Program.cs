@@ -10,7 +10,12 @@ using System;
 using System.IO;
 using System.Net;
 using System.Text;
-
+using WeladSanad.DataAccessLayer.Models;
+using WeladSanad.DataAccessLayer.Models.Context;
+using WeladSanad.DataAccessLayer.Repositories;
+using WeladSanad.DataAccessLayer.Repositories.AttendenceRepos;
+using WeladSanad.DataAccessLayer.Repositories.IRepository;
+using WeladSanad.DataAccessLayer.Repositories.IRepository.IAttendenceRepos;
 
 namespace WeladSanad
 {
