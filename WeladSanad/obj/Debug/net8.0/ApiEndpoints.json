@@ -239,7 +239,7 @@
   {
     "ContainingType": "WeladSanad.PresentationLayer.Controllers.RoleController",
     "Method": "CreateRole",
-    "RelativePath": "api/Role/Create",
+    "RelativePath": "api/Role/Create/{roleName}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -248,6 +248,11 @@
         "Name": "roleName",
         "Type": "System.String",
         "IsRequired": true
+      },
+      {
+        "Name": "roleName",
+        "Type": "",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -255,7 +260,7 @@
   {
     "ContainingType": "WeladSanad.PresentationLayer.Controllers.RoleController",
     "Method": "DeleteRole",
-    "RelativePath": "api/Role/Delete",
+    "RelativePath": "api/Role/Delete/{roleName}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -263,6 +268,11 @@
       {
         "Name": "roleName",
         "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "roleName",
+        "Type": "",
         "IsRequired": true
       }
     ],
@@ -303,14 +313,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "GroupId",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "student",
+        "Type": "WeladSanad.BusinessLogicLayer.Dtos.Student.AddStudentDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

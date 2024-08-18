@@ -22,7 +22,7 @@ namespace WeladSanad.PresentationLayer.Controllers
         [HttpPost]
         [Route("Add")]
         [Authorize]
-        public async Task<IActionResult> AddStudent([FromForm] AddStudentDto student)
+        public async Task<IActionResult> AddStudent([FromBody] AddStudentDto student)
         {
             if (!ModelState.IsValid)
             {

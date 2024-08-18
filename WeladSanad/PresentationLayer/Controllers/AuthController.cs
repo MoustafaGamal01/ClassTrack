@@ -31,20 +31,23 @@ namespace WeladSanad.PresentationLayer.Controllers
 
                 if (isPasswordValid)
                 {
-                    var tokenHandler = new JwtSecurityTokenHandler();
+                    var roles = await _userManager.GetRolesAsync(user);
+                    var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, user.UserName),
+                        new Claim(ClaimTypes.NameIdentifier, user.Id)
+                    };
 
+                    claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
+
+                    var tokenHandler = new JwtSecurityTokenHandler();
                     var tokenDescriptor = new SecurityTokenDescriptor
                     {
                         Issuer = jwtOptions.Issuer,
                         Audience = jwtOptions.Audience,
-                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.Key)), SecurityAlgorithms.HmacSha256)
-                        ,
+                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.Key)), SecurityAlgorithms.HmacSha256),
                         Expires = DateTime.UtcNow.AddMinutes(jwtOptions.LifeTime),
-                        Subject = new ClaimsIdentity(new Claim[]
-                        {
-                            new Claim(ClaimTypes.Name, user.UserName),
-                            new Claim(ClaimTypes.NameIdentifier, user.Id)
-                        }),
+                        Subject = new ClaimsIdentity(claims)
                     };
 
                     var securityToken = tokenHandler.CreateToken(tokenDescriptor);

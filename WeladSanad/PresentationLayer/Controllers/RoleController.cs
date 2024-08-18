@@ -13,9 +13,9 @@ namespace WeladSanad.PresentationLayer.Controllers
             _roleManager = roleManager;
         }
 
-        [HttpPost("Create")]
+        [HttpPost("Create/{roleName}")]
         [Authorize("Admin")]
-        public async Task<IActionResult> CreateRole([FromBody] string roleName)
+        public async Task<IActionResult> CreateRole(string roleName)
         {
             var role = new IdentityRole(roleName);
             var result = await _roleManager.CreateAsync(role);
@@ -34,9 +34,9 @@ namespace WeladSanad.PresentationLayer.Controllers
             return Ok(roles);
         }
 
-        [HttpDelete("Delete")]
+        [HttpDelete("Delete/{roleName}")]
         [Authorize("Admin")]
-        public async Task<IActionResult> DeleteRole([FromBody] string roleName)
+        public async Task<IActionResult> DeleteRole(string roleName)
         {
             var role = await _roleManager.FindByNameAsync(roleName);
             if (role == null)
