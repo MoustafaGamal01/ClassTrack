@@ -248,11 +248,6 @@
         "Name": "roleName",
         "Type": "System.String",
         "IsRequired": true
-      },
-      {
-        "Name": "roleName",
-        "Type": "",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -268,11 +263,6 @@
       {
         "Name": "roleName",
         "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "roleName",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -404,6 +394,80 @@
       {
         "Name": "studentDto",
         "Type": "WeladSanad.BusinessLogicLayer.Dtos.Student.UpdateStudentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.UserController",
+    "Method": "AdminChangePassword",
+    "RelativePath": "api/User/Admin/ChangePassword",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userPasswordDto",
+        "Type": "WeladSanad.BusinessLogicLayer.Dtos.User.AdminChangeUserPassword",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.UserController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/User/ChangePassword",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userPasswordDto",
+        "Type": "WeladSanad.BusinessLogicLayer.Dtos.User.ChangeUserPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.UserController",
+    "Method": "Delete",
+    "RelativePath": "api/User/Delete/{Username}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Username",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.UserController",
+    "Method": "GetAll",
+    "RelativePath": "api/User/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WeladSanad.PresentationLayer.Controllers.UserController",
+    "Method": "Update",
+    "RelativePath": "api/User/Update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateUserDto",
+        "Type": "WeladSanad.BusinessLogicLayer.Dtos.User.UpdateUserDto",
         "IsRequired": true
       }
     ],
