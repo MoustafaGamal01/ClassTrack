@@ -35,6 +35,11 @@ namespace WeladSanad.DataAccessLayer.Repositories
             return await _context.Groups.FirstOrDefaultAsync(g => g.Id == groupId);
         }
 
+        public async Task<List<Group>> GetGroupsByUserId(string UserId)
+        {
+            return await _context.Groups.Where(g => g.TeacherId == UserId).ToListAsync();
+        }
+
         public async Task<bool?> SaveChanges()
         {
             return await _context.SaveChangesAsync() > 0;

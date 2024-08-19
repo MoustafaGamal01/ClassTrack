@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WeladSanad.BusinessLogicLayer.Dtos.User;
 using WeladSanad.DataAccessLayer.Models;
+using WeladSanad.DataAccessLayer.Repositories.IRepository;
 
 namespace WeladSanad.PresentationLayer.Controllers
 {
@@ -10,10 +11,12 @@ namespace WeladSanad.PresentationLayer.Controllers
     public class UserController : ControllerBase
     {
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IGroupRepository _groupRepository;
 
-        public UserController(UserManager<ApplicationUser> userManager)
+        public UserController(UserManager<ApplicationUser> userManager, IGroupRepository groupRepository)
         {
             _userManager = userManager;
+            _groupRepository = groupRepository;
         }
 
         [HttpGet("GetAll")]
@@ -21,15 +24,38 @@ namespace WeladSanad.PresentationLayer.Controllers
         public async Task<IActionResult> GetAll()
         {
             var users = await _userManager.Users.ToListAsync();
+            List<UserDetailsDto> userDtos = new List<UserDetailsDto>();
 
-            var userDto = users.Select(user => new UserDetailsDto
+            foreach (var user in users)
             {
-                Id = user.Id,
-                Name = user.Name,
-                UserName = user.UserName
-            });
+                UserDetailsDto userDto = new UserDetailsDto();
+                userDto.Id = user.Id;
+                userDto.Name = user.Name;
+                userDto.UserName = user.UserName;
 
-            return Ok(userDto);
+                var roles = await _userManager.GetRolesAsync(user);
+                if(roles.Where(r => r == "Admin").Any())
+                {
+                    userDto.Role = "Admin";
+                    userDto.Groups = null;
+                }
+                else if(roles.Where(r => r == "Teacher").Any())
+                {
+                    userDto.Role = "Teacher";
+                    List<Group> grups = await _groupRepository.GetGroupsByUserId(user.Id);
+                    
+                    if(grups!= null)
+                    {
+                        foreach (var item in grups)
+                        {
+                            userDto.Groups.Add(item.Name);
+                        }
+                    }
+                }
+                userDtos.Add(userDto);
+            }
+
+            return Ok(userDtos);
         }
 
         [HttpPut]

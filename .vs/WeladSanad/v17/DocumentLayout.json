@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\AIA\\Desktop\\WeladSanad\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|c:\\users\\aia\\desktop\\weladsanad\\weladsanad\\businesslogiclayer\\dtos\\user\\userdetailsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|solutionrelative:weladsanad\\businesslogiclayer\\dtos\\user\\userdetailsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|c:\\users\\aia\\desktop\\weladsanad\\weladsanad\\dataaccesslayer\\repositories\\grouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|solutionrelative:weladsanad\\dataaccesslayer\\repositories\\grouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|c:\\users\\aia\\desktop\\weladsanad\\weladsanad\\presentationlayer\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|solutionrelative:weladsanad\\presentationlayer\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|c:\\users\\aia\\desktop\\weladsanad\\weladsanad\\businesslogiclayer\\dtos\\user\\adminchangeuserpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|solutionrelative:weladsanad\\businesslogiclayer\\dtos\\user\\adminchangeuserpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|c:\\users\\aia\\desktop\\weladsanad\\weladsanad\\dataaccesslayer\\repositories\\irepository\\igrouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC9FE46-24F0-4818-BA1B-E090FF366E92}|WeladSanad\\WeladSanad.csproj|solutionrelative:weladsanad\\dataaccesslayer\\repositories\\irepository\\igrouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +34,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\PresentationLayer\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "WeladSanad\\PresentationLayer\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\PresentationLayer\\Controllers\\UserController.cs",
               "RelativeToolTip": "WeladSanad\\PresentationLayer\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAIkAAAAFAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAAAADQAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-19T12:10:55.86Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminChangeUserPassword.cs",
-              "DocumentMoniker": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\BusinessLogicLayer\\Dtos\\User\\AdminChangeUserPassword.cs",
-              "RelativeDocumentMoniker": "WeladSanad\\BusinessLogicLayer\\Dtos\\User\\AdminChangeUserPassword.cs",
-              "ToolTip": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\BusinessLogicLayer\\Dtos\\User\\AdminChangeUserPassword.cs",
-              "RelativeToolTip": "WeladSanad\\BusinessLogicLayer\\Dtos\\User\\AdminChangeUserPassword.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "IGroupRepository.cs",
+              "DocumentMoniker": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\DataAccessLayer\\Repositories\\IRepository\\IGroupRepository.cs",
+              "RelativeDocumentMoniker": "WeladSanad\\DataAccessLayer\\Repositories\\IRepository\\IGroupRepository.cs",
+              "ToolTip": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\DataAccessLayer\\Repositories\\IRepository\\IGroupRepository.cs",
+              "RelativeToolTip": "WeladSanad\\DataAccessLayer\\Repositories\\IRepository\\IGroupRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T11:52:28.736Z",
+              "WhenOpened": "2024-08-19T17:15:47.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GroupRepository.cs",
+              "DocumentMoniker": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\DataAccessLayer\\Repositories\\GroupRepository.cs",
+              "RelativeDocumentMoniker": "WeladSanad\\DataAccessLayer\\Repositories\\GroupRepository.cs",
+              "ToolTip": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\DataAccessLayer\\Repositories\\GroupRepository.cs",
+              "RelativeToolTip": "WeladSanad\\DataAccessLayer\\Repositories\\GroupRepository.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAACUAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T17:15:42.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserDetailsDto.cs",
+              "DocumentMoniker": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\BusinessLogicLayer\\Dtos\\User\\UserDetailsDto.cs",
+              "RelativeDocumentMoniker": "WeladSanad\\BusinessLogicLayer\\Dtos\\User\\UserDetailsDto.cs",
+              "ToolTip": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\BusinessLogicLayer\\Dtos\\User\\UserDetailsDto.cs*",
+              "RelativeToolTip": "WeladSanad\\BusinessLogicLayer\\Dtos\\User\\UserDetailsDto.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T17:09:51.225Z",
               "EditorCaption": ""
             }
           ]

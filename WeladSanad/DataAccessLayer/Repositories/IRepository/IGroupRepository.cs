@@ -15,6 +15,8 @@ namespace WeladSanad.DataAccessLayer.Repositories.IRepository
 
         Task UpdateGroup(int GroupId, Group group);
 
+        Task<List<Group>> GetGroupsByUserId(string UserId);
+
         Task<bool?> SaveChanges();
     }
 }
