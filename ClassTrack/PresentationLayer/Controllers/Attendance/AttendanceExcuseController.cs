@@ -8,11 +8,11 @@ namespace ClassTrack.PresentationLayer.Controllers.Attendence
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AttendenceExcuseController : ControllerBase
+    public class AttendanceExcuseController : ControllerBase
     {
         private readonly IAttendExcuseRepository _attTypeRepo;
 
-        public AttendenceExcuseController(IAttendExcuseRepository attendenceTypeService)
+        public AttendanceExcuseController(IAttendExcuseRepository attendenceTypeService)
         {
             _attTypeRepo = attendenceTypeService;
         }

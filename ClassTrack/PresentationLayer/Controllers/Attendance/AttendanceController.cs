@@ -12,13 +12,13 @@ namespace ClassTrack.PresentationLayer.Controllers.Attendence
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class AttendenceController : ControllerBase
+    public class AttendanceController : ControllerBase
     {
         private readonly IAttendenceRepository _attendenceRepository;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IStudentRepository _studentRepository;
 
-        public AttendenceController(IAttendenceRepository attendenceRepository,
+        public AttendanceController(IAttendenceRepository attendenceRepository,
             UserManager<ApplicationUser> userManager, IStudentRepository studentRepository)
         {
             _attendenceRepository = attendenceRepository;

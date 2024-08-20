@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendenceController",
+    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceController",
     "Method": "AddAttendence",
-    "RelativePath": "api/Attendence/Add",
+    "RelativePath": "api/Attendance/Add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -16,9 +16,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendenceController",
+    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceController",
     "Method": "Search",
-    "RelativePath": "api/Attendence/Search/{searchMonthYear}",
+    "RelativePath": "api/Attendance/Search/{searchMonthYear}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -32,9 +32,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendenceController",
+    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceController",
     "Method": "UpdateAttendence",
-    "RelativePath": "api/Attendence/Update/{id}",
+    "RelativePath": "api/Attendance/Update/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -53,9 +53,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendenceExcuseController",
+    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceExcuseController",
     "Method": "AddAttendenceType",
-    "RelativePath": "api/AttendenceExcuse/Add",
+    "RelativePath": "api/AttendanceExcuse/Add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -69,9 +69,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendenceExcuseController",
+    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceExcuseController",
     "Method": "DeleteAttendenceType",
-    "RelativePath": "api/AttendenceExcuse/Delete/{id}",
+    "RelativePath": "api/AttendanceExcuse/Delete/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -85,9 +85,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendenceExcuseController",
+    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceExcuseController",
     "Method": "GetAttendenceTypes",
-    "RelativePath": "api/AttendenceExcuse/GetAll",
+    "RelativePath": "api/AttendanceExcuse/GetAll",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -95,9 +95,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendenceExcuseController",
+    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceExcuseController",
     "Method": "GetAttendenceType",
-    "RelativePath": "api/AttendenceExcuse/GetType/{id}",
+    "RelativePath": "api/AttendanceExcuse/GetType/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -111,9 +111,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendenceExcuseController",
+    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceExcuseController",
     "Method": "UpdateAttendenceType",
-    "RelativePath": "api/AttendenceExcuse/Update/{id}",
+    "RelativePath": "api/AttendanceExcuse/Update/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
