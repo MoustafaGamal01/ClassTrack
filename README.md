@@ -35,7 +35,7 @@ ClassTrack follows N-tier architecture, which includes:
 * Search students within a group. 
 
 ### Attendance Management
-* Add, update, and delete attendance excuses.
+* Add, update, and delete absence excuses.
 * Add, update, and delete student attendance with specific excuses.
 * Filter and/or search attendance records based on excuses and date. 
 
