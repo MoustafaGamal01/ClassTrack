@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4C7pg//EJ3LAjJXtMAeXCPHNMs1y5HEaIyqQk46hszrrOzdgVzesWT6gTQv0GgvhL2NgJpIL1OI7tjrk65o6qA==",
+  "dgSpecHash": "W10oWsPLfxF8VbfYf17r4rpyYK3MvL1HCIiAWKR4TKYchCTb+81rW4fQS8eISbwPbceX3/YiyHL/lOUjh2KQXQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\AIA\\Desktop\\WeladSanad\\WeladSanad\\ClassTrack.csproj",
+  "projectFilePath": "C:\\Users\\AIA\\Desktop\\ClassTrack\\ClassTrack\\ClassTrack.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AIA\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\AIA\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

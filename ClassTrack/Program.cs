@@ -88,7 +88,7 @@ public class Program
 
         services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "WeladSanad API", Version = "v1" });
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "ClassTrack API", Version = "v1" });
 
             var securityScheme = new OpenApiSecurityScheme
             {
