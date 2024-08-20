@@ -6,7 +6,7 @@ using ClassTrack.DataAccessLayer.Repositories.IRepository;
 
 namespace ClassTrack.PresentationLayer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("classtrack/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -19,7 +19,7 @@ namespace ClassTrack.PresentationLayer.Controllers
             _groupRepository = groupRepository;
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet("getall")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAll()
         {
@@ -59,7 +59,7 @@ namespace ClassTrack.PresentationLayer.Controllers
         }
 
         [HttpPut]
-        [Route("Update")]
+        [Route("update")]
         [Authorize]
         public async Task<IActionResult> Update(UpdateUserDto updateUserDto)
         {
@@ -87,7 +87,7 @@ namespace ClassTrack.PresentationLayer.Controllers
         }
 
         [HttpPut]
-        [Route("ChangePassword")]
+        [Route("changepassword")]
         [Authorize]
         public async Task<IActionResult> ChangePassword(ChangeUserPasswordDto userPasswordDto)
         {
@@ -120,7 +120,7 @@ namespace ClassTrack.PresentationLayer.Controllers
         }
 
         [HttpDelete]
-        [Route("Delete/{Username}")]
+        [Route("delete/{Username}")]
         [Authorize("Admin")]
         public async Task<IActionResult> Delete(string Username)
         {
@@ -139,7 +139,7 @@ namespace ClassTrack.PresentationLayer.Controllers
         }
 
         [HttpPut]
-        [Route("Admin/ChangePassword")]
+        [Route("admin/changepassword")]
         [Authorize("Admin")]
         public async Task<IActionResult> AdminChangePassword(AdminChangeUserPassword userPasswordDto)
         {
@@ -160,6 +160,5 @@ namespace ClassTrack.PresentationLayer.Controllers
             }
             return BadRequest("Passwords do not match");
         }
-
     }
 }

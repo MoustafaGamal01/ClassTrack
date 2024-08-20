@@ -1,8 +1,87 @@
 [
   {
+    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AbsenceExcuseController",
+    "Method": "AddAttendenceType",
+    "RelativePath": "classtrack/AbsenceExcuse/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "attendenceType",
+        "Type": "ClassTrack.BusinessLogicLayer.Dtos.Attendence.AttendTypeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AbsenceExcuseController",
+    "Method": "DeleteAttendenceType",
+    "RelativePath": "classtrack/AbsenceExcuse/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AbsenceExcuseController",
+    "Method": "GetAttendenceTypes",
+    "RelativePath": "classtrack/AbsenceExcuse/getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AbsenceExcuseController",
+    "Method": "GetAttendenceType",
+    "RelativePath": "classtrack/AbsenceExcuse/gettype/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AbsenceExcuseController",
+    "Method": "UpdateAttendenceType",
+    "RelativePath": "classtrack/AbsenceExcuse/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "attendenceType",
+        "Type": "ClassTrack.BusinessLogicLayer.Dtos.Attendence.AttendTypeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceController",
     "Method": "AddAttendence",
-    "RelativePath": "api/Attendance/Add",
+    "RelativePath": "classtrack/Attendance/add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +97,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceController",
     "Method": "Search",
-    "RelativePath": "api/Attendance/Search/{searchMonthYear}",
+    "RelativePath": "classtrack/Attendance/search/{searchMonthYear}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -34,7 +113,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceController",
     "Method": "UpdateAttendence",
-    "RelativePath": "api/Attendance/Update/{id}",
+    "RelativePath": "classtrack/Attendance/update/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -53,88 +132,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceExcuseController",
-    "Method": "AddAttendenceType",
-    "RelativePath": "api/AttendanceExcuse/Add",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "attendenceType",
-        "Type": "ClassTrack.BusinessLogicLayer.Dtos.Attendence.AttendTypeDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceExcuseController",
-    "Method": "DeleteAttendenceType",
-    "RelativePath": "api/AttendanceExcuse/Delete/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceExcuseController",
-    "Method": "GetAttendenceTypes",
-    "RelativePath": "api/AttendanceExcuse/GetAll",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceExcuseController",
-    "Method": "GetAttendenceType",
-    "RelativePath": "api/AttendanceExcuse/GetType/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ClassTrack.PresentationLayer.Controllers.Attendence.AttendanceExcuseController",
-    "Method": "UpdateAttendenceType",
-    "RelativePath": "api/AttendanceExcuse/Update/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "attendenceType",
-        "Type": "ClassTrack.BusinessLogicLayer.Dtos.Attendence.AttendTypeDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.AuthController",
     "Method": "Login",
-    "RelativePath": "api/Auth/login",
+    "RelativePath": "classtrack/Auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -150,7 +150,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.AuthController",
     "Method": "Logout",
-    "RelativePath": "api/Auth/logout",
+    "RelativePath": "classtrack/Auth/logout",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -160,7 +160,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.AuthController",
     "Method": "Register",
-    "RelativePath": "api/Auth/register",
+    "RelativePath": "classtrack/Auth/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -176,7 +176,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.GroupController",
     "Method": "AddGroup",
-    "RelativePath": "api/Group/Add",
+    "RelativePath": "classtrack/Group/add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -192,7 +192,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.GroupController",
     "Method": "DeleteGroup",
-    "RelativePath": "api/Group/Delete/{id}",
+    "RelativePath": "classtrack/Group/delete/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -208,7 +208,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.GroupController",
     "Method": "ViewGroups",
-    "RelativePath": "api/Group/GetAll",
+    "RelativePath": "classtrack/Group/getall",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -218,7 +218,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.GroupController",
     "Method": "UpdateGroup",
-    "RelativePath": "api/Group/Update/{id}",
+    "RelativePath": "classtrack/Group/update/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -239,7 +239,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.RoleController",
     "Method": "CreateRole",
-    "RelativePath": "api/Role/Create/{roleName}",
+    "RelativePath": "classtrack/Role/create/{roleName}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -255,7 +255,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.RoleController",
     "Method": "DeleteRole",
-    "RelativePath": "api/Role/Delete/{roleName}",
+    "RelativePath": "classtrack/Role/delete/{roleName}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -271,7 +271,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.RoleController",
     "Method": "GetAllRoles",
-    "RelativePath": "api/Role/GetAll",
+    "RelativePath": "classtrack/Role/getall",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -281,7 +281,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.StudentController",
     "Method": "ActivateStudent",
-    "RelativePath": "api/Student/Activate/{id}",
+    "RelativePath": "classtrack/Student/activate/{id}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -297,7 +297,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.StudentController",
     "Method": "AddStudent",
-    "RelativePath": "api/Student/Add",
+    "RelativePath": "classtrack/Student/add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -313,7 +313,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.StudentController",
     "Method": "DeactivateStudent",
-    "RelativePath": "api/Student/Deactivate/{id}",
+    "RelativePath": "classtrack/Student/deactivate/{id}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -329,7 +329,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.StudentController",
     "Method": "DeactivatedStudents",
-    "RelativePath": "api/Student/DeactivatedStudents",
+    "RelativePath": "classtrack/Student/DeactivatedStudents",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -339,7 +339,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.StudentController",
     "Method": "ViewStudents",
-    "RelativePath": "api/Student/GetAll",
+    "RelativePath": "classtrack/Student/getall",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -349,7 +349,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.StudentController",
     "Method": "Search",
-    "RelativePath": "api/Student/Search/{name}",
+    "RelativePath": "classtrack/Student/Search/{name}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -365,7 +365,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.StudentController",
     "Method": "StudentsInGroup",
-    "RelativePath": "api/Student/StudentsInGroup/{groupId}",
+    "RelativePath": "classtrack/Student/studentsingroup/{groupId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -381,7 +381,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.StudentController",
     "Method": "UpdateStudent",
-    "RelativePath": "api/Student/Update/{id}",
+    "RelativePath": "classtrack/Student/update/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -402,7 +402,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.UserController",
     "Method": "AdminChangePassword",
-    "RelativePath": "api/User/Admin/ChangePassword",
+    "RelativePath": "classtrack/User/admin/changepassword",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -418,7 +418,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.UserController",
     "Method": "ChangePassword",
-    "RelativePath": "api/User/ChangePassword",
+    "RelativePath": "classtrack/User/changepassword",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -434,7 +434,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.UserController",
     "Method": "Delete",
-    "RelativePath": "api/User/Delete/{Username}",
+    "RelativePath": "classtrack/User/delete/{Username}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -450,7 +450,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.UserController",
     "Method": "GetAll",
-    "RelativePath": "api/User/GetAll",
+    "RelativePath": "classtrack/User/getall",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -460,7 +460,7 @@
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.UserController",
     "Method": "Update",
-    "RelativePath": "api/User/Update",
+    "RelativePath": "classtrack/User/update",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,

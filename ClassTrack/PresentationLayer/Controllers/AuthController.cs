@@ -5,7 +5,7 @@ using ClassTrack.DataAccessLayer.Models;
 
 namespace ClassTrack.PresentationLayer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("classtrack/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
     {

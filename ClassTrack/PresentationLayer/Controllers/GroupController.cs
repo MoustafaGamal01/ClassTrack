@@ -6,7 +6,7 @@ using ClassTrack.DataAccessLayer.Repositories.IRepository;
 
 namespace ClassTrack.PresentationLayer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("classtrack/[controller]")]
     [ApiController]
     public class GroupController : ControllerBase
     {
@@ -18,7 +18,7 @@ namespace ClassTrack.PresentationLayer.Controllers
         }
 
         [HttpPost]
-        [Route("Add")]
+        [Route("add")]
         [Authorize("Admin")]
         public async Task<IActionResult> AddGroup([FromBody] AddGroupDto group)
         {
@@ -37,7 +37,7 @@ namespace ClassTrack.PresentationLayer.Controllers
         }
 
         [HttpGet]
-        [Route("GetAll")]
+        [Route("getall")]
         [Authorize]
         public async Task<IActionResult> ViewGroups()
         {
@@ -53,7 +53,7 @@ namespace ClassTrack.PresentationLayer.Controllers
         }
 
         [HttpDelete]
-        [Route("Delete/{id:int}")]
+        [Route("delete/{id:int}")]
         [Authorize("Admin")]
         public async Task<IActionResult> DeleteGroup(int id)
         {
@@ -69,7 +69,7 @@ namespace ClassTrack.PresentationLayer.Controllers
         }
 
         [HttpPut]
-        [Route("Update/{id:int}")]
+        [Route("update/{id:int}")]
         [Authorize("Admin")]
         public async Task<IActionResult> UpdateGroup(int id, [FromBody] UpdateGroupDto group)
         {

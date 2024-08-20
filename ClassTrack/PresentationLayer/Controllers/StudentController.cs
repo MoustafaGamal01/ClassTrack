@@ -6,7 +6,7 @@ using ClassTrack.DataAccessLayer.Repositories.IRepository;
 
 namespace ClassTrack.PresentationLayer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("classtrack/[controller]")]
     [ApiController]
     public class StudentController : ControllerBase
     {
@@ -20,7 +20,7 @@ namespace ClassTrack.PresentationLayer.Controllers
         }
 
         [HttpPost]
-        [Route("Add")]
+        [Route("add")]
         [Authorize]
         public async Task<IActionResult> AddStudent([FromBody] AddStudentDto student)
         {
@@ -40,7 +40,7 @@ namespace ClassTrack.PresentationLayer.Controllers
         }
 
         [HttpGet]
-        [Route("GetAll")]
+        [Route("getall")]
         [Authorize]
         public async Task<IActionResult> ViewStudents()
         {
@@ -61,7 +61,7 @@ namespace ClassTrack.PresentationLayer.Controllers
         }
 
         [HttpPost]
-        [Route("Deactivate/{id:int}")]
+        [Route("deactivate/{id:int}")]
         [Authorize("Admin")]
         public async Task<IActionResult> DeactivateStudent(int id)
         {
@@ -77,7 +77,7 @@ namespace ClassTrack.PresentationLayer.Controllers
         }
 
         [HttpPost]
-        [Route("Activate/{id:int}")]
+        [Route("activate/{id:int}")]
         [Authorize("Admin")]
         public async Task<IActionResult> ActivateStudent(int id)
         {
@@ -93,7 +93,7 @@ namespace ClassTrack.PresentationLayer.Controllers
         }
 
         [HttpPut]
-        [Route("Update/{id:int}")]
+        [Route("update/{id:int}")]
         [Authorize("Admin")]
         public async Task<IActionResult> UpdateStudent(int id, [FromBody] UpdateStudentDto studentDto)
         {
@@ -127,7 +127,7 @@ namespace ClassTrack.PresentationLayer.Controllers
         }
 
         [HttpGet]
-        [Route("StudentsInGroup/{groupId:int}")]
+        [Route("studentsingroup/{groupId:int}")]
         [Authorize]
         public async Task<IActionResult> StudentsInGroup(int groupId)
         {

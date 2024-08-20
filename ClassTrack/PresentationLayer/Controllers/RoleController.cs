@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ClassTrack.PresentationLayer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("classtrack/[controller]")]
     [ApiController]
     public class RoleController : ControllerBase
     {
@@ -13,7 +13,7 @@ namespace ClassTrack.PresentationLayer.Controllers
             _roleManager = roleManager;
         }
 
-        [HttpPost("Create/{roleName}")]
+        [HttpPost("create/{roleName}")]
         [Authorize("Admin")]
         public async Task<IActionResult> CreateRole(string roleName)
         {
@@ -26,7 +26,7 @@ namespace ClassTrack.PresentationLayer.Controllers
             return BadRequest(result.Errors);
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet("getall")]
         [Authorize]
         public async Task<IActionResult> GetAllRoles()
         {
@@ -34,7 +34,7 @@ namespace ClassTrack.PresentationLayer.Controllers
             return Ok(roles);
         }
 
-        [HttpDelete("Delete/{roleName}")]
+        [HttpDelete("delete/{roleName}")]
         [Authorize("Admin")]
         public async Task<IActionResult> DeleteRole(string roleName)
         {

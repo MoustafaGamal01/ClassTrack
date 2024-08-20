@@ -6,19 +6,19 @@ using ClassTrack.DataAccessLayer.Repositories.IRepository.IAttendenceRepos;
 
 namespace ClassTrack.PresentationLayer.Controllers.Attendence
 {
-    [Route("api/[controller]")]
+    [Route("classtrack/[controller]")]
     [ApiController]
-    public class AttendanceExcuseController : ControllerBase
+    public class AbsenceExcuseController : ControllerBase
     {
         private readonly IAttendExcuseRepository _attTypeRepo;
 
-        public AttendanceExcuseController(IAttendExcuseRepository attendenceTypeService)
+        public AbsenceExcuseController(IAttendExcuseRepository attendenceTypeService)
         {
             _attTypeRepo = attendenceTypeService;
         }
 
         [HttpGet]
-        [Route("GetAll")]
+        [Route("getall")]
         [Authorize]
         public async Task<IActionResult> GetAttendenceTypes()
         {
@@ -27,7 +27,7 @@ namespace ClassTrack.PresentationLayer.Controllers.Attendence
         }
 
         [HttpGet]
-        [Route("GetType/{id}")]
+        [Route("gettype/{id}")]
         [Authorize]
         public async Task<IActionResult> GetAttendenceType(int id)
         {
@@ -36,7 +36,7 @@ namespace ClassTrack.PresentationLayer.Controllers.Attendence
         }
 
         [HttpPost]
-        [Route("Add")]
+        [Route("add")]
         [Authorize("Admin")]
         public async Task<IActionResult> AddAttendenceType(AttendTypeDto attendenceType)
         {
@@ -55,7 +55,7 @@ namespace ClassTrack.PresentationLayer.Controllers.Attendence
         }
 
         [HttpPut]
-        [Route("Update/{id:int}")]
+        [Route("update/{id:int}")]
         [Authorize("Admin")]
         public async Task<IActionResult> UpdateAttendenceType(int id, AttendTypeDto attendenceType)
         {
@@ -75,7 +75,7 @@ namespace ClassTrack.PresentationLayer.Controllers.Attendence
         }
 
         [HttpDelete]
-        [Route("Delete/{id}")]
+        [Route("delete/{id}")]
         [Authorize("Admin")]
         public async Task<IActionResult> DeleteAttendenceType(int id)
         {

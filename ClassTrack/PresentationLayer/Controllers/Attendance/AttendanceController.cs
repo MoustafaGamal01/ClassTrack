@@ -9,7 +9,7 @@ using ClassTrack.DataAccessLayer.Repositories.IRepository.IAttendenceRepos;
 
 namespace ClassTrack.PresentationLayer.Controllers.Attendence
 {
-    [Route("api/[controller]")]
+    [Route("classtrack/[controller]")]
     [ApiController]
     [Authorize]
     public class AttendanceController : ControllerBase
@@ -27,7 +27,7 @@ namespace ClassTrack.PresentationLayer.Controllers.Attendence
         }
 
         [HttpPost]
-        [Route("Add")]
+        [Route("add")]
         public async Task<IActionResult> AddAttendence(StudentAttendDto attendence)
         {
             var user = await _userManager.GetUserAsync(User);
@@ -53,7 +53,7 @@ namespace ClassTrack.PresentationLayer.Controllers.Attendence
         }
 
         [HttpPut]
-        [Route("Update/{id:int}")]
+        [Route("update/{id:int}")]
         public async Task<IActionResult> UpdateAttendence(int id, StudentAttend attendence)
         {
             var user = await _userManager.GetUserAsync(User);
@@ -71,7 +71,7 @@ namespace ClassTrack.PresentationLayer.Controllers.Attendence
         }
 
         [HttpGet]
-        [Route("Search/{searchMonthYear:alpha}")]
+        [Route("search/{searchMonthYear:alpha}")]
         public async Task<IActionResult> Search(string searchMonthYear)
         {
             var stdAtt = await _attendenceRepository.Search(searchMonthYear);
