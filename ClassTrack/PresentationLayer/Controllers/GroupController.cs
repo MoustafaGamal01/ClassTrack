@@ -11,10 +11,12 @@ namespace ClassTrack.PresentationLayer.Controllers
     public class GroupController : ControllerBase
     {
         private readonly IGroupRepository _groupRepository;
+        private readonly IStudentRepository _studentRepository;
 
-        public GroupController(IGroupRepository groupRepository)
+        public GroupController(IGroupRepository groupRepository, IStudentRepository studentRepository)
         {
             _groupRepository = groupRepository;
+            _studentRepository = studentRepository;
         }
 
         [HttpPost]
@@ -45,12 +47,24 @@ namespace ClassTrack.PresentationLayer.Controllers
         {
             List<ViewGroupsDto> grpsDto = new List<ViewGroupsDto>();
             var grps = await _groupRepository.GetAllGroups();
-            grpsDto = grps.Select(g => new ViewGroupsDto
+            foreach (var grp in grps)
             {
-                Id = g.Id,
-                Name = g.Name
-            }).ToList();
+                var stds = await  _studentRepository.GetStudentsByGroupId(grp.Id);
+                ViewGroupsDto grpDto = new ViewGroupsDto();
+                grpDto.Name = grp.Name;
+                grpDto.Id = grp.Id;
+                if (grp.TeacherId == null)
+                {
+                    grpDto.TeacherName = "No teacher assigned";
+                }
+                else
+                {
+                    grpDto.TeacherName = grp.Teacher.Name;
+                }
+                grpDto.StudentsCount = stds.Count;
 
+                grpsDto.Add(grpDto);
+            }
             return Ok(grpsDto);
         }
 
@@ -73,7 +87,7 @@ namespace ClassTrack.PresentationLayer.Controllers
         [HttpPut]
         [Route("update/{id:int}")]
         [Authorize("Admin")]
-        public async Task<IActionResult> UpdateGroup(int id, [FromBody] UpdateGroupDto group)
+        public async Task<IActionResult> UpdateGroup(int id, [FromBody] UpdateGroupDto groupDto)
         {
             if (!ModelState.IsValid)
             {
@@ -86,8 +100,9 @@ namespace ClassTrack.PresentationLayer.Controllers
                 return NotFound();
             }
 
-            if (grp.Name != null) grp.Name = group.Name;
-            if (grp.TeacherId != null) grp.TeacherId = group.TeacherId;
+            if (groupDto.Name != null) grp.Name = groupDto.Name;
+            if (groupDto.TeacherId != null) grp.TeacherId = groupDto.TeacherId;
+            else grp.TeacherId = grp.TeacherId;
             await _groupRepository.UpdateGroup(id, grp);
             await _groupRepository.SaveChanges();
             return Ok();

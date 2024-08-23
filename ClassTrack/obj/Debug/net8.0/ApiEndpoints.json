@@ -229,7 +229,7 @@
         "IsRequired": true
       },
       {
-        "Name": "group",
+        "Name": "groupDto",
         "Type": "ClassTrack.BusinessLogicLayer.Dtos.Group.UpdateGroupDto",
         "IsRequired": true
       }

@@ -27,7 +27,7 @@ namespace ClassTrack.DataAccessLayer.Repositories
 
         public async Task<List<Group>> GetAllGroups()
         {
-            return await _context.Groups.ToListAsync();
+            return await _context.Groups.Include(g => g.Teacher).ToListAsync();
         }
 
         public async Task<Group> GetGroupById(int groupId)
