@@ -4487,11 +4487,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AIA\\Desktop\\ClassTrack\\ClassTrack\\ClassTrack.csproj",
+      "projectUniqueName": "F:\\Programming\\- Projects\\ClassTrack\\ClassTrack\\ClassTrack\\ClassTrack.csproj",
       "projectName": "ClassTrack",
-      "projectPath": "C:\\Users\\AIA\\Desktop\\ClassTrack\\ClassTrack\\ClassTrack.csproj",
+      "projectPath": "F:\\Programming\\- Projects\\ClassTrack\\ClassTrack\\ClassTrack\\ClassTrack.csproj",
       "packagesPath": "C:\\Users\\AIA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AIA\\Desktop\\ClassTrack\\ClassTrack\\obj\\",
+      "outputPath": "F:\\Programming\\- Projects\\ClassTrack\\ClassTrack\\ClassTrack\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

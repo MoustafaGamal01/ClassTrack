@@ -26,11 +26,13 @@ namespace ClassTrack.PresentationLayer.Controllers
             {
                 return BadRequest(ModelState);
             }
+            
             var grp = new Group
             {
-                Name = group.Name
+                Name = group.Name,
+                TeacherId = group.TeacherId
             };
-
+                
             await _groupRepository.AddGroup(grp);
             await _groupRepository.SaveChanges();
             return Ok();
@@ -85,6 +87,7 @@ namespace ClassTrack.PresentationLayer.Controllers
             }
 
             if (grp.Name != null) grp.Name = group.Name;
+            if (grp.TeacherId != null) grp.TeacherId = group.TeacherId;
             await _groupRepository.UpdateGroup(id, grp);
             await _groupRepository.SaveChanges();
             return Ok();

@@ -3,5 +3,7 @@
     public class UpdateGroupDto
     {
         public string Name { get; set; }
+
+        public string TeacherId { get; set; }
     }
 }
