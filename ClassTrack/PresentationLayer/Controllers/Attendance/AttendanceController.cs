@@ -33,8 +33,7 @@ namespace ClassTrack.PresentationLayer.Controllers.Attendence
             var user = await _userManager.GetUserAsync(User);
 
             var std = await _studentRepository.GetStudentById(attendence.StudentId);
-
-            if (user.Id != std.Group.TeacherId)
+            if (user.Id != std.Group.TeacherId && !User.IsInRole("Admin"))
                 return Unauthorized();
 
             var stdAtt = new StudentAttend
@@ -46,32 +45,41 @@ namespace ClassTrack.PresentationLayer.Controllers.Attendence
             };
 
             await _attendenceRepository.AddAttendence(stdAtt);
-            var ok = await _attendenceRepository.SaveChanges();
+            var res = await _attendenceRepository.SaveChanges();
 
-            if (ok == true) return Ok();
+            if (res == true) return Ok("Added Attendence!");
             else return BadRequest();
         }
 
         [HttpPut]
         [Route("update/{id:int}")]
-        public async Task<IActionResult> UpdateAttendence(int id, StudentAttend attendence)
+        public async Task<IActionResult> UpdateAttendence(int id, StudentAttendDto attendence)
         {
             var user = await _userManager.GetUserAsync(User);
 
-            var std = await _studentRepository.GetStudentById(attendence.StudentId);
+            StudentAttend stdAtt = await _attendenceRepository.GetAttendenceById(id);
+            var std = await _studentRepository.GetStudentById(stdAtt.StudentId);
 
-            if (user.Id != std.Group.TeacherId)
+            if (user.Id != std.Group.TeacherId && !User.IsInRole("Admin"))
                 return Unauthorized();
-
-            await _attendenceRepository.UpdateAttendence(id, attendence);
+            
+            if (attendence.Description != null) stdAtt.Description = attendence.Description;
+            
+            if (attendence.Date != null) stdAtt.Date = attendence.Date;
+            
+            if (attendence.AttendId!= 0) stdAtt.AttendId = attendence.AttendId;
+            
+            stdAtt.StudentId = stdAtt.StudentId;
+            
+            await _attendenceRepository.UpdateAttendence(id, stdAtt);
             var ok = await _attendenceRepository.SaveChanges();
 
-            if (ok == true) return Ok();
+            if (ok == true) return Ok("Updated Attendenct!");
             else return BadRequest();
         }
 
         [HttpGet]
-        [Route("search/{searchMonthYear:alpha}")]
+        [Route("search/{searchMonthYear}")]
         public async Task<IActionResult> Search(string searchMonthYear)
         {
             var stdAtt = await _attendenceRepository.Search(searchMonthYear);

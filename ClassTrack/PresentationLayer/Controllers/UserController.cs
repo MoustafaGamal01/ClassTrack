@@ -122,21 +122,39 @@ namespace ClassTrack.PresentationLayer.Controllers
         [HttpDelete]
         [Route("delete/{Username}")]
         [Authorize("Admin")]
-        public async Task<IActionResult> Delete(string Username)
+        public async Task<IActionResult> Delete(string Username/*, [FromQuery] bool forceDelete = false*/)
         {
             var user = await _userManager.FindByNameAsync(Username);
 
             if (user == null)
             {
-                return NotFound();
+                return NotFound("Can't find this user");
             }
 
+            var groups = await _groupRepository.GetGroupsByUserId(user.Id);
+
+            //if (groups != null && !forceDelete)
+            //{
+            //    return BadRequest("Can't remove this user, user has groups. Are you sure you want to delete?");
+            //}
+
+            if(groups != null)
+            {
+                foreach (var group in groups)
+                {
+                    group.TeacherId = null;
+                }
+            }
+            await _groupRepository.SaveChanges();
+            
+            // Remove roles before deleting the user
             var roles = await _userManager.GetRolesAsync(user);
             await _userManager.RemoveFromRolesAsync(user, roles);
 
             await _userManager.DeleteAsync(user);
             return Ok("User Deleted");
         }
+
 
         [HttpPut]
         [Route("admin/changepassword")]

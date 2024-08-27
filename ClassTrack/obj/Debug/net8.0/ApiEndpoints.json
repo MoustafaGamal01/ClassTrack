@@ -125,7 +125,7 @@
       },
       {
         "Name": "attendence",
-        "Type": "ClassTrack.DataAccessLayer.Models.Attendence.StudentAttend",
+        "Type": "ClassTrack.BusinessLogicLayer.Dtos.Attendence.StudentAttendDto",
         "IsRequired": true
       }
     ],
@@ -443,6 +443,11 @@
         "Name": "Username",
         "Type": "System.String",
         "IsRequired": true
+      },
+      {
+        "Name": "forceDelete",
+        "Type": "System.Boolean",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
