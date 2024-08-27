@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using ClassTrack.BusinessLogicLayer.Dtos.Student;
 using ClassTrack.DataAccessLayer.Models;
 using ClassTrack.DataAccessLayer.Repositories.IRepository;
+using ClassTrack.Migrations;
+using ClassTrack.DataAccessLayer.Repositories.IRepository.IAttendenceRepos;
 
 namespace ClassTrack.PresentationLayer.Controllers
 {
@@ -12,11 +14,14 @@ namespace ClassTrack.PresentationLayer.Controllers
     {
         private readonly IStudentRepository _studentRepository;
         private readonly IGroupRepository _groupRepository;
+        private readonly IAttendenceRepository _attendenceRepository;
 
-        public StudentController(IStudentRepository studentRepository, IGroupRepository groupRepository)
+        public StudentController(IStudentRepository studentRepository, IGroupRepository groupRepository,
+            IAttendenceRepository attendenceRepository)
         {
             _studentRepository = studentRepository;
             _groupRepository = groupRepository;
+            _attendenceRepository = attendenceRepository;
         }
 
         [HttpPost]
@@ -142,6 +147,34 @@ namespace ClassTrack.PresentationLayer.Controllers
 
             return Ok(stdinGroup);
         }
+
+        [HttpDelete]
+        [Route("delete/{id:int}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeleteStudent(int id)
+        {
+            var std = await _studentRepository.GetStudentById(id);
+
+            if (std == null)
+            {
+                return NotFound("Student isn't found");
+            }
+
+            var stdAttend = await _attendenceRepository.GetAttendenceByStudentId(id);
+            if (stdAttend != null)
+            {
+                foreach (var studentAtt in stdAttend)
+                {
+                    await _attendenceRepository.DeleteAttendence(studentAtt.Id);
+                }
+                await _attendenceRepository.SaveChanges();
+            }
+
+            await _studentRepository.DeleteStudent(id);
+            await _studentRepository.SaveChanges();
+            return Ok("Student Deleted");
+        }
+
 
         [HttpGet]
         [Route("DeactivatedStudents")]

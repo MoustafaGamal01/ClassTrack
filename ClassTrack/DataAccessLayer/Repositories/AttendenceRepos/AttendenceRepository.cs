@@ -29,6 +29,11 @@ namespace ClassTrack.DataAccessLayer.Repositories.AttendenceRepos
             return await _context.StudentAttends.FirstOrDefaultAsync(att => att.Id == Id);
         }
 
+        public async Task<List<StudentAttend>> GetAttendenceByStudentId(int StudentId)
+        {
+            return await _context.StudentAttends.Include(a=>a.Student).Where(att => att.StudentId == StudentId).ToListAsync();
+        }
+
         public async Task<List<StudentAttend>> GetAttendences()
         {
             return await _context.StudentAttends.ToListAsync();

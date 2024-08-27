@@ -338,6 +338,22 @@
   },
   {
     "ContainingType": "ClassTrack.PresentationLayer.Controllers.StudentController",
+    "Method": "DeleteStudent",
+    "RelativePath": "classtrack/Student/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClassTrack.PresentationLayer.Controllers.StudentController",
     "Method": "ViewStudents",
     "RelativePath": "classtrack/Student/getall",
     "HttpMethod": "GET",
@@ -443,11 +459,6 @@
         "Name": "Username",
         "Type": "System.String",
         "IsRequired": true
-      },
-      {
-        "Name": "forceDelete",
-        "Type": "System.Boolean",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []

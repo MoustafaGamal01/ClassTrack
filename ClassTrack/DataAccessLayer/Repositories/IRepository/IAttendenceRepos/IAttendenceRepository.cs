@@ -10,6 +10,7 @@ namespace ClassTrack.DataAccessLayer.Repositories.IRepository.IAttendenceRepos
         Task UpdateAttendence(int stdAtt, StudentAttend attendence);
         Task DeleteAttendence(int id);
         Task<List<StudentAttend>> Search(string searchMonthYear);
+        Task<List<StudentAttend>> GetAttendenceByStudentId(int StudentId);
         Task<bool?> SaveChanges();
     }
 }
