@@ -14,7 +14,7 @@ ClassTrack, a powerful attendance tracking API designed to streamline attendance
 ClassTrack follows N-tier architecture, which includes:
 
 * **Business Layer**: Implements core business logic.
-* **Data Access Layer**: Utilizes the Repository and Unit of Work patterns for efficient data retrieval.
+* **Data Access Layer**: Utilizes the Repository pattern for efficient data retrieval.
 * **Presentation Layer**: Handles the API endpoints and user interactions.
 * **Repository Pattern**: Organizes data access logic.
 * **Dependency Injection**: Enhances code modularity and testability.
