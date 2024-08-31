@@ -46,7 +46,7 @@ namespace ClassTrack.DataAccessLayer.Repositories
 
         public Task<List<Student>> GetStudentsByGroupId(int groupId)
         {
-            return _context.Students.Include(g => g.Group).Where(s => s.GroupId == groupId).ToListAsync();
+            return _context.Students.Include(g => g.Group).Where(s => s.GroupId == groupId && s.IsDeleted == false).ToListAsync();
         }
 
         public async Task<bool?> SaveChanges()
@@ -56,7 +56,7 @@ namespace ClassTrack.DataAccessLayer.Repositories
 
         public Task<List<Student>> Search(string Name)
         {
-            return _context.Students.Include(s => s.Group).Where(s => s.Name.Contains(Name)).ToListAsync();
+            return _context.Students.Include(s => s.Group).Where(s => s.Name.Contains(Name) && s.IsDeleted == false).ToListAsync();
         }
 
         public async Task UpdateStudent(int stdId, Student student)

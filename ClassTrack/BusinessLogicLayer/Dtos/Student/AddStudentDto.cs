@@ -4,6 +4,7 @@
     {
         [Required]
         public string Name { get; set; }
+        public string PhoneNumber { get; set; }
         public int GroupId { get; set; }
     }
 }

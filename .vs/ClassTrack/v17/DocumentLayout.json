@@ -1,28 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "F:\\Programming\\- Projects\\ClassTrack\\ClassTrack\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{EAD60B17-E805-4F6D-9290-64B98090687C}|ClassTrack\\ClassTrack.csproj|f:\\programming\\- projects\\classtrack\\classtrack\\classtrack\\presentationlayer\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAD60B17-E805-4F6D-9290-64B98090687C}|ClassTrack\\ClassTrack.csproj|solutionrelative:classtrack\\presentationlayer\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EAD60B17-E805-4F6D-9290-64B98090687C}|ClassTrack\\ClassTrack.csproj|f:\\programming\\- projects\\classtrack\\classtrack\\classtrack\\dataaccesslayer\\repositories\\attendencerepos\\attendencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAD60B17-E805-4F6D-9290-64B98090687C}|ClassTrack\\ClassTrack.csproj|solutionrelative:classtrack\\dataaccesslayer\\repositories\\attendencerepos\\attendencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EAD60B17-E805-4F6D-9290-64B98090687C}|ClassTrack\\ClassTrack.csproj|f:\\programming\\- projects\\classtrack\\classtrack\\classtrack\\dataaccesslayer\\repositories\\irepository\\iattendencerepos\\iattendencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAD60B17-E805-4F6D-9290-64B98090687C}|ClassTrack\\ClassTrack.csproj|solutionrelative:classtrack\\dataaccesslayer\\repositories\\irepository\\iattendencerepos\\iattendencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EAD60B17-E805-4F6D-9290-64B98090687C}|ClassTrack\\ClassTrack.csproj|f:\\programming\\- projects\\classtrack\\classtrack\\classtrack\\presentationlayer\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAD60B17-E805-4F6D-9290-64B98090687C}|ClassTrack\\ClassTrack.csproj|solutionrelative:classtrack\\presentationlayer\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EAD60B17-E805-4F6D-9290-64B98090687C}|ClassTrack\\ClassTrack.csproj|f:\\programming\\- projects\\classtrack\\classtrack\\classtrack\\dataaccesslayer\\models\\attendance\\studentattend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAD60B17-E805-4F6D-9290-64B98090687C}|ClassTrack\\ClassTrack.csproj|solutionrelative:classtrack\\dataaccesslayer\\models\\attendance\\studentattend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -30,76 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "F:\\Programming\\- Projects\\ClassTrack\\ClassTrack\\ClassTrack\\PresentationLayer\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "ClassTrack\\PresentationLayer\\Controllers\\UserController.cs",
-              "ToolTip": "F:\\Programming\\- Projects\\ClassTrack\\ClassTrack\\ClassTrack\\PresentationLayer\\Controllers\\UserController.cs",
-              "RelativeToolTip": "ClassTrack\\PresentationLayer\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAIcAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T14:51:41.983Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StudentAttend.cs",
-              "DocumentMoniker": "F:\\Programming\\- Projects\\ClassTrack\\ClassTrack\\ClassTrack\\DataAccessLayer\\Models\\Attendance\\StudentAttend.cs",
-              "RelativeDocumentMoniker": "ClassTrack\\DataAccessLayer\\Models\\Attendance\\StudentAttend.cs",
-              "ToolTip": "F:\\Programming\\- Projects\\ClassTrack\\ClassTrack\\ClassTrack\\DataAccessLayer\\Models\\Attendance\\StudentAttend.cs",
-              "RelativeToolTip": "ClassTrack\\DataAccessLayer\\Models\\Attendance\\StudentAttend.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T14:50:48.257Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IAttendenceRepository.cs",
-              "DocumentMoniker": "F:\\Programming\\- Projects\\ClassTrack\\ClassTrack\\ClassTrack\\DataAccessLayer\\Repositories\\IRepository\\IAttendenceRepos\\IAttendenceRepository.cs",
-              "RelativeDocumentMoniker": "ClassTrack\\DataAccessLayer\\Repositories\\IRepository\\IAttendenceRepos\\IAttendenceRepository.cs",
-              "ToolTip": "F:\\Programming\\- Projects\\ClassTrack\\ClassTrack\\ClassTrack\\DataAccessLayer\\Repositories\\IRepository\\IAttendenceRepos\\IAttendenceRepository.cs",
-              "RelativeToolTip": "ClassTrack\\DataAccessLayer\\Repositories\\IRepository\\IAttendenceRepos\\IAttendenceRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T14:45:10.813Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AttendenceRepository.cs",
-              "DocumentMoniker": "F:\\Programming\\- Projects\\ClassTrack\\ClassTrack\\ClassTrack\\DataAccessLayer\\Repositories\\AttendenceRepos\\AttendenceRepository.cs",
-              "RelativeDocumentMoniker": "ClassTrack\\DataAccessLayer\\Repositories\\AttendenceRepos\\AttendenceRepository.cs",
-              "ToolTip": "F:\\Programming\\- Projects\\ClassTrack\\ClassTrack\\ClassTrack\\DataAccessLayer\\Repositories\\AttendenceRepos\\AttendenceRepository.cs",
-              "RelativeToolTip": "ClassTrack\\DataAccessLayer\\Repositories\\AttendenceRepos\\AttendenceRepository.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAABgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T14:45:07.23Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StudentController.cs",
-              "DocumentMoniker": "F:\\Programming\\- Projects\\ClassTrack\\ClassTrack\\ClassTrack\\PresentationLayer\\Controllers\\StudentController.cs",
-              "RelativeDocumentMoniker": "ClassTrack\\PresentationLayer\\Controllers\\StudentController.cs",
-              "ToolTip": "F:\\Programming\\- Projects\\ClassTrack\\ClassTrack\\ClassTrack\\PresentationLayer\\Controllers\\StudentController.cs",
-              "RelativeToolTip": "ClassTrack\\PresentationLayer\\Controllers\\StudentController.cs",
-              "ViewState": "AQIAAIgAAAAAAAAAAAAYwJcAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T14:38:42.951Z",
-              "EditorCaption": ""
             }
           ]
         }

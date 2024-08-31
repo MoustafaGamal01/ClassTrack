@@ -36,7 +36,8 @@ namespace ClassTrack.PresentationLayer.Controllers
             var std = new Student
             {
                 Name = student.Name,
-                GroupId = student.GroupId
+                GroupId = student.GroupId,
+                PhoneNumber = student.PhoneNumber
             };
 
             await _studentRepository.AddStudent(std);
@@ -59,6 +60,7 @@ namespace ClassTrack.PresentationLayer.Controllers
                 dto.Name = item.Name;
                 var grp = await _groupRepository.GetGroupById(item.GroupId);
                 dto.GroupName = grp.Name;
+                dto.PhoneNumber = item.PhoneNumber;
                 stdsDto.Add(dto);
             }
 
@@ -102,15 +104,13 @@ namespace ClassTrack.PresentationLayer.Controllers
         [Authorize("Admin")]
         public async Task<IActionResult> UpdateStudent(int id, [FromBody] UpdateStudentDto studentDto)
         {
-
-
             if (!ModelState.IsValid)
             {
                 return BadRequest("Invalid Data");
             }
 
             // Check if both Name and GroupId are null
-            if (studentDto.Name == null && studentDto.GroupId == null)
+            if (studentDto.Name == null && studentDto.GroupId == null && studentDto.PhoneNumber == null)
             {
                 return BadRequest("Either Name or GroupId must be provided.");
             }
@@ -125,6 +125,7 @@ namespace ClassTrack.PresentationLayer.Controllers
             // Update only if values are provided
             if (studentDto.Name != null) std.Name = studentDto.Name;
             if (studentDto.GroupId != null) std.GroupId = studentDto.GroupId;
+            if(studentDto.PhoneNumber != null) std.PhoneNumber = studentDto.PhoneNumber;
 
             await _studentRepository.UpdateStudent(id, std);
             await _studentRepository.SaveChanges();
@@ -142,7 +143,8 @@ namespace ClassTrack.PresentationLayer.Controllers
             {
                 Id = s.Id,
                 Name = s.Name,
-                GroupName = s.Group.Name
+                GroupName = s.Group.Name,
+                PhoneNumber = s.PhoneNumber
             });
 
             return Ok(stdinGroup);
@@ -174,7 +176,6 @@ namespace ClassTrack.PresentationLayer.Controllers
             await _studentRepository.SaveChanges();
             return Ok("Student Deleted");
         }
-
 
         [HttpGet]
         [Route("DeactivatedStudents")]

@@ -8,7 +8,7 @@ namespace ClassTrack.DataAccessLayer.Models
         [Required]
         public string Name { get; set; }
         public bool IsDeleted { get; set; } = false;
-
+        public string? PhoneNumber { get; set; }
         [ForeignKey("Group")]
         public int GroupId { get; set; }
         public virtual Group? Group { get; set; }
